@@ -7,7 +7,8 @@ const Navbar = () => {
 
     const navItem = ["Home", "Projects", "Skill", "Blogs", "Contact"]
     return (
-        <div className='w-full h-20 top-0 fixed z-30 flex items-center justify-between px-6 text-stone-200 '>
+       <div className='w-full h-20 top-0 fixed z-30 flex items-center justify-between px-6 text-stone-200  '>
+
             <div className='w-28 h-24'>
                 <img src={logo} alt="logo" className='h-full w-full object-contain' />
             </div>
@@ -31,7 +32,7 @@ const Navbar = () => {
 
             {/* Mobile view */}
 
-            <ul className={`absolute top-20 right-0 w-[70%] max-w-xs  text-center text-lg sm:text-xl flex flex-col gap-4 py-4 transition-transform duration-300 transform ${navOpen ? 'translate-x-1/3' : 'translate-x-full'} md:hidden`}>
+            <ul className={`absolute top-56 right-0 w-[70%] max-w-xs  text-center text-lg sm:text-xl flex flex-col gap-4 py-4 transition-transform duration-300 transform ${navOpen ? 'translate-x-1/3' : 'translate-x-full'} md:hidden`}>
                 {navItem.map((item) => (
                     <li key={item} className="cursor-pointer" onClick={() => setNavOpen(false)}>
                         {item}
