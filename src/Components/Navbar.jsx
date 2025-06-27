@@ -51,13 +51,22 @@ const Navbar = () => {
 
             {/* Mobile view */}
 
-            <ul className={`absolute top-56 right-0 w-[70%] max-w-xs  text-center text-white text-lg sm:text-xl flex flex-col gap-4 py-4 transition-transform duration-300 transform ${navOpen ? 'translate-x-1/3' : 'translate-x-full'} md:hidden`}>
+            <ul className={`absolute top-56 right-0 w-[70%] max-w-xs text-center text-white text-lg sm:text-xl flex flex-col gap-4 py-4 transition-transform duration-300 transform ${navOpen ? 'translate-x-1/3' : 'translate-x-full'} md:hidden`}>
                 {navItem.map((item) => (
-                    <li key={item} className="cursor-pointer" onClick={() => setNavOpen(false)}>
-                        {item}
+                    <li key={item} className="cursor-pointer">
+                        <Link
+                            to={item.toLowerCase()}
+                            smooth={true}
+                            duration={500}
+                            offset={-60}
+                            onClick={() => setNavOpen(false)} // close mobile nav on click
+                        >
+                            {item}
+                        </Link>
                     </li>
                 ))}
             </ul>
+
 
 
 
