@@ -3,7 +3,7 @@ import image from '/Image/image.png';
 
 const About = () => {
     return (
-        <div className=" flex flex-col md:flex-row items-center justify-center  w-full px-6 md:px-16 gap-10 bg-white/10 bg-opacity-50 text-stone-200">
+        <div className=" flex flex-col md:flex-row items-center justify-center  w-full px-6 md:px-16 gap-10 bg-white/10 bg-opacity-50 text-stone-200 mt-8">
             {/* left  */}
             <div className="md:w-1/2 flex items-center justify-center">
                 <img
