@@ -1,13 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from "/Image/logo.png"
 import { FaBars, FaTimes } from "react-icons/fa";
 const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+            setScrolled(window.scrollY > 0);
+        };
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     const [navOpen, setNavOpen] = useState(false)
     const toggleNav = () => setNavOpen(!navOpen)
 
     const navItem = ["Home", "Projects", "Skill", "Blogs", "Contact"]
     return (
-       <div className='w-full h-20 top-0 fixed z-30 flex items-center justify-between px-6 text-stone-200  '>
+        <div className={`fixed top-0 w-full h-20 z-30 px-6 flex items-center justify-between transition-all duration-300 ${scrolled ? 'bg-stone-200 text-black shadow-md rounded-b-2xl' : 'bg-[#000116] text-stone-200'
+            }`}>
+
 
             <div className='w-28 h-24'>
                 <img src={logo} alt="logo" className='h-full w-full object-contain' />
@@ -18,7 +30,11 @@ const Navbar = () => {
                 {
                     navItem.map((item) => (
                         <li key={item} className='relative group cursor-pointer'> {item}
-                            <span className='absolute left-0 -bottom-1 h-1 w-0 bg-stone-200 rounded-2xl transition-all duration-300 group-hover:w-full'></span>
+                            <span
+                                className={`absolute left-0 -bottom-1 h-1 w-0 rounded-2xl transition-all duration-300 group-hover:w-full ${scrolled ? 'bg-black' : 'bg-stone-200'
+                                    }`}
+                            ></span>
+
                         </li>
                     ))
                 }

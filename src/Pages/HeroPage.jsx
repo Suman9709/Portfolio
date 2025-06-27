@@ -5,7 +5,7 @@ import resume from '/Image/resume.pdf'
 
 const HeroPage = () => {
   return (
-    <div className="mt-20 flex flex-col md:flex-row items-center justify-center h-[calc(100vh-80px)] w-full px-6 md:px-16 gap-10 bg-opacity-50">
+    <div className="mt-20 flex flex-col md:flex-row items-center justify-center h-[calc(100vh-80px)] w-full px-6 md:px-16 gap-10 bg-[#000116] bg-opacity-50">
 
 
       {/* Profile Image */}
@@ -13,8 +13,9 @@ const HeroPage = () => {
         <img
           src={image}
           alt="profile"
-          className="w-72 h-72 object-cover rounded-full border-4 border-white shadow-lg"
+        className="h-80 sm:h-96 md:h-[28rem] object-contain"
         />
+
       </div>
 
       {/* Text and Logo */}

@@ -2,7 +2,8 @@ import React from 'react'
 import Navbar from './Components/Navbar'
 import background from '/Image/background.jpg'
 import HeroPage from './Pages/HeroPage'
-import SkillCard from './Components/SkillCard'
+import Skill from './Pages/Skill'
+import About from './Pages/About'
 
 const App = () => {
   return (
@@ -12,7 +13,8 @@ const App = () => {
     >
       <Navbar />
       <HeroPage />
-      <SkillCard/>
+      <About />
+      <Skill />
     </div>
 
   )
