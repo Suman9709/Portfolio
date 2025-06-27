@@ -26,8 +26,11 @@ const skills = [
 const SkillCard = () => {
   return (
     <div className="w-full overflow-hidden py-6 bg-transparent">
-      <div className=' text-4xl text-center p-8 text-stone-200 font-semibold'>
-        <h1>Skills</h1>
+      <div className="flex justify-center">
+        <h1 className="relative text-3xl font-bold mb-10 group inline-block text-stone-200">
+         Skills
+          <span className="absolute left-0 -bottom-1 h-1 w-0 bg-white rounded-2xl transition-all duration-300 group-hover:w-full"></span>
+        </h1>
       </div>
       <div className="flex w-max animate-infinite-scroll">
         {[...skills, ...skills].map((skill, index) => (

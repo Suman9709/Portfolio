@@ -3,7 +3,7 @@ import SkillCard from '../Components/SkillCard'
 
 const Skill = () => {
   return (
-    <div>
+    <div id='skill'>
       <SkillCard/>
     </div>
   )

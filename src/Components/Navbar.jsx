@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import logo from "/Image/logo.png"
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from 'react-scroll';
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
 
@@ -27,17 +28,19 @@ const Navbar = () => {
 
             {/* Desktop  */}
             <ul className='hidden md:flex justify-around flex-1 text-2xl'>
-                {
-                    navItem.map((item) => (
-                        <li key={item} className='relative group cursor-pointer'> {item}
-                            <span
-                                className={`absolute left-0 -bottom-1 h-1 w-0 rounded-2xl transition-all duration-300 group-hover:w-full ${scrolled ? 'bg-black' : 'bg-stone-200'
-                                    }`}
-                            ></span>
-
-                        </li>
-                    ))
-                }
+                {navItem.map((item) => (
+                    <li key={item} className="relative group cursor-pointer">
+                        <Link
+                            to={item.toLowerCase()}
+                            smooth={true}
+                            duration={500}
+                            offset={-60} // if you have a fixed navbar
+                        >
+                            {item}
+                            <span className="absolute left-0 -bottom-1 h-1 w-0 bg-stone-200 rounded-2xl transition-all duration-300 group-hover:w-full"></span>
+                        </Link>
+                    </li>
+                ))}
             </ul>
 
 

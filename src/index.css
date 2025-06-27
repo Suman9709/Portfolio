@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes infinite-scroll {
   0% {
     transform: translateX(0);
@@ -30,3 +35,19 @@
   transform-origin: 70% 70%;
   animation: wave 1.8s infinite;
 }
+
+
+@keyframes gradientMotion {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMotion 4s ease infinite;
+}
+
