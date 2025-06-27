@@ -4,6 +4,7 @@ import background from '/Image/background.jpg'
 import HeroPage from './Pages/HeroPage'
 import Skill from './Pages/Skill'
 import About from './Pages/About'
+import Project from './Pages/Project'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <HeroPage />
       <About />
       <Skill />
+      <Project/>
     </div>
 
   )
