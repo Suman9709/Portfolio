@@ -37,7 +37,11 @@ const Navbar = () => {
                             offset={-60} // if you have a fixed navbar
                         >
                             {item}
-                            <span className="absolute left-0 -bottom-1 h-1 w-0 bg-stone-200 rounded-2xl transition-all duration-300 group-hover:w-full"></span>
+                            <span
+                                className={`absolute left-0 -bottom-1 h-1 w-0 rounded-2xl transition-all duration-300 group-hover:w-full ${scrolled ? 'bg-black' : 'bg-stone-200'
+                                    }`}
+                            />
+
                         </Link>
                     </li>
                 ))}
