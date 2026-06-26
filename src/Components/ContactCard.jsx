@@ -6,12 +6,12 @@ const ContactCard = ({ name, description, logoLink, link }) => {
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-64 bg-gradient-to-br from-pink-500 via-purple-600 to-indigo-500 animate-gradient text-white rounded-xl p-4 shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105 flex items-start gap-4"
+      className="flex min-h-32 w-full items-start gap-4 border border-white/10 bg-white/[0.05] p-5 text-white shadow-2xl shadow-black/20 transition hover:-translate-y-1 hover:border-cyan-300/60 sm:w-80"
     >
       <img src={logoLink} alt={name} className="h-10 w-10 object-contain" />
       <div>
-        <h3 className="text-lg font-semibold">{name}</h3>
-        <p className="text-sm text-gray-200 line-clamp-2">{description}</p>
+        <h3 className="text-lg font-bold">{name}</h3>
+        <p className="mt-2 text-sm leading-6 text-slate-300">{description}</p>
       </div>
     </a>
   );

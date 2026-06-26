@@ -1,8 +1,87 @@
 @import "tailwindcss";
 
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #05070d;
+  color: #fff;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-kicker {
+  color: #67e8f9;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.05;
+  max-width: 780px;
+}
+
+.text-gradient {
+  animation: gradientMotion 7s ease infinite;
+  background: linear-gradient(90deg, #67e8f9, #fef3c7, #fda4af, #67e8f9);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 72%);
+  animation: gridDrift 18s linear infinite;
+}
+
+.shine-panel {
+  overflow: hidden;
+}
+
+.shine-panel::after {
+  background: linear-gradient(110deg, transparent 20%, rgb(255 255 255 / 0.18) 45%, transparent 65%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translateX(-120%);
+  animation: panelShine 5.5s ease-in-out infinite;
+}
+
+.icon-link {
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  color: #fff;
+  display: inline-flex;
+  height: 3rem;
+  justify-content: center;
+  transition: 180ms ease;
+  width: 3rem;
+}
+
+.icon-link:hover {
+  border-color: #67e8f9;
+  color: #67e8f9;
+  transform: translateY(-2px);
 }
 
 @keyframes infinite-scroll {
@@ -15,7 +94,11 @@ html {
 }
 
 .animate-infinite-scroll {
-  animation: infinite-scroll 20s linear infinite;
+  animation: infinite-scroll 28s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
 }
 
 
@@ -49,5 +132,34 @@ html {
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradientMotion 4s ease infinite;
+}
+
+@keyframes gridDrift {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 72px 72px;
+  }
+}
+
+@keyframes panelShine {
+  0%, 45% {
+    transform: translateX(-120%);
+  }
+  70%, 100% {
+    transform: translateX(120%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 

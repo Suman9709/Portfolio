@@ -1,33 +1,49 @@
-import React from 'react'
+﻿import React from 'react';
+import Reveal from '../Components/Reveal';
 import image from '/Image/image.png';
 
 const About = () => {
-    return (
-        <div className=" flex flex-col md:flex-row items-center justify-center  w-full px-6 md:px-16 gap-10 bg-white/10 bg-opacity-50 text-stone-200 mt-8">
-            {/* left  */}
-            <div className="md:w-1/2 flex items-center justify-center">
-                <img
-                    src={image}
-                    alt="profile"
-                    className="w-72 h-72 object-cover rounded-full border-4 border-white shadow-lg"
-                />
-            </div>
+  return (
+    <section id="about" className="px-5 py-20 sm:px-8 lg:px-16">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 border-y border-white/10 py-16 lg:grid-cols-[0.85fr_1.15fr]">
+        <Reveal className="relative mx-auto w-full max-w-sm">
+          <div className="absolute -left-4 -top-4 h-full w-full border border-amber-200/30" />
+          <img
+            src={image}
+            alt="Suman Kumar"
+            className="relative h-96 w-full border border-white/10 bg-white/[0.05] object-contain p-4 shadow-2xl shadow-black/30"
+          />
+        </Reveal>
 
-            {/* right  */}
-            <div className="w-full md:w-3/4 lg:w-1/2 px-4 sm:px-6 md:px-8 p-4">
-                <p className="text-base sm:text-md text-justify text-stone-200">
-                    <span className="wave-hand text-4xl">👋</span> Hi, I'm a passionate MERN Stack Developer with hands-on experience in building full-stack web applications using MongoDB, Express.js, React.js, and Node.js. I enjoy turning complex problems into clean, efficient, and scalable solutions.
+        <Reveal delay={0.12}>
+          <p className="section-kicker">About me</p>
+          <h2 className="section-title mt-3">I turn ideas into polished, practical web products.</h2>
+          <div className="mt-6 space-y-5 text-base leading-8 text-slate-300">
+            <p>
+              Hi, I am a MERN Stack Developer focused on building clean, responsive, and scalable web
+              applications with MongoDB, Express.js, React.js, and Node.js.
+            </p>
+            <p>
+              I enjoy shaping both sides of a product: frontend interfaces that feel premium and backend APIs
+              that stay organized, secure, and maintainable.
+            </p>
+            <p>
+              Along with personal projects, I also work with freelance clients on business websites, academy
+              websites, dashboards, and full-stack applications.
+            </p>
+          </div>
 
-                    <br /><br />
-                    My expertise lies in developing responsive user interfaces, crafting robust backend APIs, and connecting them seamlessly to create meaningful digital experiences. Whether it's designing a dynamic frontend or structuring secure databases, I thrive on bringing ideas to life through code.
+          <div className="mt-8 grid gap-3 sm:grid-cols-3">
+            {['Clean UI', 'Responsive Design', 'Full Stack Logic'].map((item) => (
+              <div key={item} className="border border-white/10 bg-white/[0.04] px-4 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:-translate-y-1 hover:border-cyan-300/50">
+                {item}
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
 
-                    <br /><br />
-                    I’m always eager to learn new technologies, contribute to impactful projects, and collaborate with like-minded developers who are just as excited about innovation as I am.
-                </p>
-            </div>
-
-        </div>
-    )
-}
-
-export default About
+export default About;

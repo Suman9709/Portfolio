@@ -1,35 +1,42 @@
 import React from 'react';
-import githubs from "/Image/github.png"
+import { motion } from 'framer-motion';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
-const ProjectCard = ({ img, title, description, techstack, github, link }) => {
+const MotionArticle = motion.article;
+
+const ProjectCard = ({ img, title, description, techstack, github, link, category, result }) => {
   return (
-    <div className="w-72 h-96 bg-gradient-to-br from-[#1f1f1f] via-[#41032a] to-[#1e1e4f] border border-white p-4 rounded-2xl shadow-lg text-stone-200 flex flex-col justify-between transition-transform duration-300 hover:scale-105">
+    <MotionArticle
+      className="group flex min-h-[30rem] flex-col border border-white/10 bg-slate-950/70 p-4 text-slate-200 shadow-2xl shadow-black/20 transition duration-300 hover:border-cyan-200/50"
+      whileHover={{ y: -8 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+    >
 
-      {/* Project Image */}
-      <div className="w-full h-40 overflow-hidden rounded-md">
-        <img src={img} alt={title} className="w-full h-full object-cover" />
+      <div className="h-52 overflow-hidden border border-white/10 bg-white/[0.04]">
+        <img src={img} alt={title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
       </div>
 
-      {/* Title and Description */}
-      <div className="mt-3 flex-1">
-        <h3 className="font-semibold text-lg truncate">{title}</h3>
-        <p className="text-sm mt-2 line-clamp-3">{description}</p>
+      <div className="mt-5 flex flex-1 flex-col">
+        <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-200">{category}</p>
+        <h3 className="mt-3 text-2xl font-bold text-white">{title}</h3>
+        <p className="mt-3 text-sm leading-6 text-slate-300">{description}</p>
+        <p className="mt-4 border-l-2 border-amber-200 pl-3 text-sm font-semibold text-white">{result}</p>
       </div>
 
-      {/* Tech Stack Icons */}
-      <div className="flex gap-2 mt-3 w-full  p-2 items-center justify-center bg-white/10 rounded-xl ">
-        <img src={techstack} alt="tech" className="h-12 w-32 " />
+      <div className="mt-5 flex items-center justify-between border-y border-white/10 py-3">
+        <span className="text-xs uppercase tracking-[0.2em] text-slate-400">Stack</span>
+        <img src={techstack} alt="MERN stack" className="h-10 w-28 object-contain" />
       </div>
 
-      {/* Links */}
-      <div className="flex justify-between mt-3 text-sm">
-        <div className='flex gap-2 items-center '>
-          <img src={githubs} alt="" className='h-6 w-6' />
-          <a href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
-        </div>
-        <a href={link} target="_blank" rel="noopener noreferrer">Live</a>
+      <div className="mt-4 flex flex-wrap gap-3 text-sm font-semibold">
+        <a href={github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-white/15 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
+          <FaGithub /> GitHub
+        </a>
+        <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-white/15 px-3 py-2 transition hover:border-cyan-300 hover:text-cyan-200">
+          <FaExternalLinkAlt /> Live
+        </a>
       </div>
-    </div>
+    </MotionArticle>
   );
 };
 

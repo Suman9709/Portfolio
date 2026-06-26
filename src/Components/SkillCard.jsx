@@ -9,6 +9,7 @@ import postman from '/Image/postman.png'
 import tailwind from '/Image/tailwind.png'
 import express from '/Image/express.png'
 import git from "/Image/git.png"
+import Reveal from './Reveal'
 
 const skills = [
   { src: html, name: "HTML" },
@@ -25,23 +26,25 @@ const skills = [
 
 const SkillCard = () => {
   return (
-    <div className="w-full overflow-hidden py-6 bg-transparent">
-      <div className="flex justify-center">
-        <h1 className="relative text-3xl font-bold mb-10 group inline-block text-stone-200">
-         Skills
-          <span className="absolute left-0 -bottom-1 h-1 w-0 bg-white rounded-2xl transition-all duration-300 group-hover:w-full"></span>
-        </h1>
-      </div>
+    <div className="w-full overflow-hidden px-5 py-20 sm:px-8 lg:px-16">
+      <Reveal className="mx-auto mb-10 max-w-7xl">
+        <p className="section-kicker">Tech stack</p>
+        <h2 className="section-title mt-3">Tools I use to build reliable products.</h2>
+      </Reveal>
+      <div className="relative mx-auto max-w-7xl overflow-hidden border-y border-white/10 py-6">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#05070d] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#05070d] to-transparent" />
       <div className="flex w-max animate-infinite-scroll">
         {[...skills, ...skills].map((skill, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-28 h-28 mx-4 bg-white/10 backdrop-blur-xl rounded-xl flex flex-col items-center justify-center text-white"
+            className="mx-3 flex h-32 w-32 flex-shrink-0 flex-col items-center justify-center border border-white/10 bg-white/[0.05] text-white backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-cyan-300/60 hover:shadow-2xl hover:shadow-cyan-950/40"
           >
-            <img src={skill.src} alt={skill.name} className="w-10 h-10 mb-2" />
-            <span className="text-sm font-semibold">{skill.name}</span>
+            <img src={skill.src} alt={skill.name} className="mb-3 h-11 w-11 object-contain" />
+            <span className="text-sm font-bold uppercase tracking-[0.14em]">{skill.name}</span>
           </div>
         ))}
+      </div>
       </div>
     </div>
 
