@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '/Image/logo.png';
+import BrandLogo from './BrandLogo';
 
 const navItem = ['Home', 'About', 'Skill', 'Projects', 'Freelance', 'Contact'];
 
@@ -24,12 +24,8 @@ const Navbar = () => {
       }`}
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between">
-        <Link to="home" smooth duration={500} offset={-80} className="flex cursor-pointer items-center gap-3">
-          <img src={logo} alt="Suman Kumar logo" className="h-12 w-12 object-contain" />
-          <div className="hidden sm:block">
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-white">Suman</p>
-            <p className="text-xs text-cyan-200">MERN Developer</p>
-          </div>
+        <Link to="home" smooth duration={500} offset={-80} className="cursor-pointer">
+          <BrandLogo />
         </Link>
 
         <ul className="hidden items-center gap-7 text-sm font-semibold uppercase tracking-[0.18em] text-slate-200 lg:flex">

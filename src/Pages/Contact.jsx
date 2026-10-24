@@ -1,5 +1,4 @@
 import React from 'react';
-import ContactCard from '../Components/ContactCard';
 import Reveal from '../Components/Reveal';
 
 const Contact = () => {
@@ -12,29 +11,22 @@ const Contact = () => {
             <h2 className="section-title mt-3">Let us build something sharp.</h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-slate-300">
               For freelance websites, MERN applications, portfolio redesigns, or collaboration opportunities,
-              message me directly and I will get back with a clear next step.
+              I bring a clear process and focused product thinking to every engagement.
             </p>
           </Reveal>
 
-          <Reveal className="grid gap-4 sm:grid-cols-2" delay={0.12}>
-            <ContactCard
-              name="LinkedIn"
-              description="Connect professionally and view my work updates."
-              logoLink="/Image/linkedin.png"
-              link="https://www.linkedin.com/in/suman9709/"
-            />
-            <ContactCard
-              name="Gmail"
-              description="Send project details, collaboration ideas, or freelance queries."
-              logoLink="/Image/gmail.png"
-              link="mailto:suman.k9709@gmail.com"
-            />
-            <ContactCard
-              name="GitHub"
-              description="Explore my repositories, experiments, and full-stack projects."
-              logoLink="/Image/github.png"
-              link="https://github.com/Suman9709"
-            />
+          <Reveal className="border border-white/10 bg-white/[0.04] p-7 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-8" delay={0.12}>
+            <p className="text-xs font-black uppercase tracking-[0.24em] text-cyan-200">Collaboration</p>
+            <h3 className="mt-3 text-2xl font-black text-white">A straightforward process, from first idea to launch.</h3>
+            <div className="mt-7 grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              {['Scope clearly', 'Build thoughtfully', 'Launch confidently'].map((step, index) => (
+                <div key={step} className="border border-white/10 bg-slate-950/50 p-4">
+                  <span className="text-xs font-black tracking-[0.16em] text-violet-200">0{index + 1}</span>
+                  <p className="mt-3 text-sm font-bold text-slate-100">{step}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-7 text-sm leading-7 text-slate-400">Contact details and social links are available in the footer.</p>
           </Reveal>
         </div>
       </div>

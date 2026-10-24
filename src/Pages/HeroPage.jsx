@@ -85,21 +85,37 @@ const HeroPage = () => {
 
         <div className="order-1 flex justify-center lg:order-2">
           <MotionDiv
-            className="relative w-full max-w-sm sm:max-w-md"
+            className="scene-stage relative w-full max-w-sm sm:max-w-md"
             initial={{ opacity: 0, scale: 0.94, x: 24 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
+            <div className="scene-halo" aria-hidden="true" />
+            <div className="scene-ring scene-ring-one" aria-hidden="true" />
+            <div className="scene-ring scene-ring-two" aria-hidden="true" />
             <MotionDiv
-              className="absolute inset-8 border border-cyan-300/30"
-              animate={{ rotate: [0, 1.5, 0], scale: [1, 1.02, 1] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            />
-            <div className="shine-panel relative border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-black/40 backdrop-blur-xl">
-              <img src={image} alt="Suman Kumar" className="h-[28rem] w-full object-contain sm:h-[34rem]" />
-            </div>
+              className="portrait-3d-card shine-panel relative border border-white/10 bg-white/[0.06] p-4 shadow-2xl shadow-black/40 backdrop-blur-xl"
+              animate={{ y: [0, -8, 0], rotateY: [-2, 2, -2] }}
+              whileHover={{ rotateX: 3, rotateY: -5, scale: 1.015 }}
+              transition={{ y: { duration: 5.5, repeat: Infinity, ease: 'easeInOut' }, rotateY: { duration: 7, repeat: Infinity, ease: 'easeInOut' }, default: { type: 'spring', stiffness: 260, damping: 20 } }}
+              style={{ transformPerspective: 1200 }}
+            >
+              <div className="portrait-grid" aria-hidden="true" />
+              <img src={image} alt="Suman Kumar" className="relative h-[28rem] w-full object-contain sm:h-[34rem]" />
+              <div className="absolute left-7 top-7 border border-cyan-200/30 bg-slate-950/70 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-cyan-100 backdrop-blur-md">
+                Open to work
+              </div>
+            </MotionDiv>
+            <MotionDiv
+              className="stack-float absolute -right-4 top-16 border border-violet-300/30 bg-slate-950/75 px-4 py-3 text-center shadow-xl shadow-black/30 backdrop-blur-xl sm:-right-8"
+              animate={{ y: [0, 9, 0], rotate: [2, -2, 2] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Focus</p>
+              <p className="mt-1 text-sm font-black text-violet-200">Full stack</p>
+            </MotionDiv>
             <div className="absolute -bottom-6 left-6 right-6 border border-white/10 bg-slate-950/90 p-4 text-center shadow-2xl shadow-black/30 backdrop-blur-xl">
-              <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-200">React - Node - MongoDB</p>
+              <p className="text-sm font-bold uppercase tracking-[0.24em] text-cyan-200">React · Node · MongoDB</p>
             </div>
           </MotionDiv>
         </div>

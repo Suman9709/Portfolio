@@ -1,10 +1,10 @@
 import React from 'react'
 import SkillCard from '../Components/SkillCard'
 
-const Skill = () => {
+const Skill = ({ onOpenProfile }) => {
   return (
     <div id='skill'>
-      <SkillCard/>
+      <SkillCard onOpenProfile={onOpenProfile} />
     </div>
   )
 }
